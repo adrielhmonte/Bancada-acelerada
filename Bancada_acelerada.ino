@@ -31,6 +31,7 @@ void setup() {
 
   Serial.begin(9600);
   lcd.init();
+  lcd.backlight();
   lcd.clear();
   //Equação para calcular a concentração PPM a partir dos valores em Volts do sensor
   MQ9.setRegressionMethod(1); //_PPM =  a*ratio^b
@@ -161,7 +162,7 @@ void loop() {
           lcd.print("Valvula:"); lcd.print(valvState); lcd.print(" BUMP:");lcd.print(i);
           lcd.setCursor(lcdGasC,lcdGasR);
           lcd.print("CH4:"); lcd.print(CH4); lcd.print(" PPM");
-          delay(30000);
+          delay(60000);
         }
         lcd.clear();
         lcd.setCursor(lcdTempC, lcdTempR);
@@ -222,7 +223,7 @@ void loop() {
         lcd.print("CHECK"); lcd.print(j);
         lcd.setCursor(lcdUmiC, lcdUmiR);
         lcd.print("Aguarde");
-        delay(40000);
+        delay(60000);
       }
       lcd.clear();
       lcd.setCursor(lcdTempC, lcdTempR);
